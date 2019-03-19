@@ -1,0 +1,140 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif; 
+}
+
+body {
+  margin: 10px 10px 10px 10px;
+  padding: 10px; 
+  background-color: azure;
+}
+
+/*Main heading*/
+.header {
+     margin: 0px;
+    height: 77%;
+}
+
+.header>h1 {
+  margin: 0 0 0 0;
+  font-size: 2.5em;
+  text-align: center;
+  color: azure;  
+}
+
+article > {
+    padding-left: 1px;
+    
+}
+
+.wrapper {
+  max-width: 1940px;
+  display: grid;
+  grid-gap: 10px;
+  font-family: 'Nunito', sans-serif;   
+    
+}
+
+/*https://alistapart.com/article/responsive-web-design*/
+
+@media screen and (min-width: 500px) {
+
+  /* no grid support? */
+  .sidebar {
+    float: left;
+    width: 10%;
+    max-width: 225px;
+    text-align: center; 
+  }
+
+    /*Apect ratio for images https://www.kirupa.com/html5/preserve_an_image_aspect_ratio_when_resized.htm*/
+    
+  .largeImg {
+    float: left;
+    text-align: center;
+    min-width: 1225px;
+    max-width: 1125px; 
+      height: auto;
+  }
+    
+    /*large image aspect ratio*/
+    .adjImg>img {
+     width: 80%;
+     height: 500px;
+    }
+    
+    article {
+    min-width: 1255px;
+    max-width: 1225px; 
+    }
+    
+    .centered {
+      width: 915px;
+      margin: auto;
+      padding-left: 5px;
+      padding-top: 0px;
+        
+    }
+    
+    .textArea {
+     margin: auto; 
+     line-height: 1.4em;
+    }
+    
+    /*Enclose the div that you want to center with a parent element (a wrapper or container)
+      Set “text-align: center” to parent element.
+      Then set the inside div to “display: inline-block”*/
+    
+    .container {
+     display: grid;
+     justify-content: center;   
+     
+    }
+    
+    img { 
+     padding: 1rem; 
+    }
+    
+    .thumbs {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: space-between;    
+  }
+    
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+     grid-template-rows: 1fr 7fr;
+      
+  
+  }
+  
+  .header, .footer {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+      
+    
+  }
+
+    .login-container {
+        text-align: center;
+    }
+
+.wrapper > * {
+  background-color: #2F4454;
+  border-radius: 5px;
+  padding: 35px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 3px;
+  }
+}
